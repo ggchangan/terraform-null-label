@@ -1,7 +1,7 @@
 locals {
   enabled = "${var.enabled == "true" ? true : false }"
 
-  id = "${lower(join(local.delimiter, compact(concat(list(local.namespace, local.environment, local.stage, local.name, local.attributes)))))}"
+  id = "${format("[%s]", join(local.delimiter, compact(concat(list(upper(local.environment), upper(local.name), upper(local.stage), "DG", local.attributes)))))}"
 
   # selected_name : Select which value to use, the one from context, or the one from the var
   # name: Remove spaces, make lowercase
