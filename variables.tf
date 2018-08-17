@@ -25,7 +25,7 @@ variable "enabled" {
 
 variable "delimiter" {
   type        = "string"
-  default     = "]["
+  default     = "-"
   description = "Delimiter to be used between `name`, `namespace`, `stage`, etc."
 }
 
